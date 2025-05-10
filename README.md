@@ -40,7 +40,7 @@ src/
 
 ### Autenticación
 
-- **POST** `/api/users/register`\
+- **POST** `/api/users/register-user`\
   Registra un nuevo usuario.
 
   **Body:**
@@ -64,6 +64,14 @@ src/
     "email": "correo@example.com",
     "password": "contraseña_segura"
   }
+  ```
+
+  - **GET** `/api/users/verify`\
+  Verifica usuario con el token JWT.
+
+  **Headers:**
+  ```
+  Authorization: Bearer <token_jwt>
   ```
 
 ### Usuarios

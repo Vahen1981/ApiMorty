@@ -23,7 +23,7 @@ interface AuthenticatedRequest extends Request {
     };
   }
 
-// Register User Admin
+// Register User
 export const registerUser: RequestHandler = async (req: Request<{}, {}, RegisterRequestBody>, res: Response): Promise<void> => {
   const { name, lastName, email, password } = req.body;
 
@@ -65,7 +65,7 @@ export const registerUser: RequestHandler = async (req: Request<{}, {}, Register
   }
 };
 
-// Login User Admin
+// Login User
 export const userLogin: RequestHandler = async (req: Request<{}, {}, LoginRequestBody>, res: Response): Promise<void> => {
   const { email, password } = req.body;
 
@@ -100,7 +100,7 @@ export const userLogin: RequestHandler = async (req: Request<{}, {}, LoginReques
   }
 };
 
-// Verify User Admin
+// Verify User
 export const userVerify: RequestHandler = async (
     req: Request,
     res: Response
