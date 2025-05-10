@@ -83,11 +83,24 @@ Documentación oficial de la api en: https://rickandmortyapi.com/documentation/#
 
 ## 🔐 Autenticación
 
-Esta API utiliza JWT para proteger rutas. Para acceder a rutas protegidas, incluye el token en el encabezado de autorización:
-
+Para las rutas protegidas se debe enviar el header con el token incluido
 ```
 Authorization: Bearer <token_jwt>
 ```
+
+Esta API tiene un middleware de autenticación para rutas protegidas en la carpeta `src/middleware/Auth.ts` sin embargo no es usado en ningún endpoint actualmente. Si a futuro se construye alguna ruta protegida el middleware puede incluirse en el router como se muestra en el ejemplo:
+```
+userRouter.get('/verify', auth, controller); 
+```
+
+O bien si se quieren proteger todas las rutas del proxy hacia la api original (para testear los privilegios de usuario), se puede reemplazar la primera linea de la función que conecta con la api en `src/server.ts`
+```
+app.use('/api/rickandmorty', Authorization, async (req: Request, res: Response) => { 
+  ///resto del código
+})
+```
+
+
 
 ## 🛠️ Instalación y Uso
 
