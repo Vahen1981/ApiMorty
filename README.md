@@ -38,7 +38,7 @@ src/
 
 ## 📄 Endpoints
 
-### Autenticación
+### Usuarios
 
 - **POST** `/api/users/register-user`\
   Registra un nuevo usuario.
@@ -74,12 +74,6 @@ src/
   Authorization: Bearer <token_jwt>
   ```
 
-### Usuarios
-
-  **Headers:**
-  ```
-  Authorization: Bearer <token_jwt>
-  ```
 
 ### Rick and Morty
 
