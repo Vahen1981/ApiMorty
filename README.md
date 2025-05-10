@@ -3,6 +3,7 @@
 API RESTful para la gestión de usuarios y consumo de datos de personajes de Rick and Morty. Desarrollada con Node.js, Express y TypeScript, utilizando MongoDB como base de datos y desplegada en Render.
 
 ## 🚀 URL Base
+Actualmente se encuentra desplegada en:
 
 ```
 https://apimorty.onrender.com
