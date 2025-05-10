@@ -93,8 +93,10 @@ Esta API tiene un middleware de autenticación para rutas protegidas en la carpe
 userRouter.get('/verify', auth, controller); 
 ```
 
-O bien si se quieren proteger todas las rutas del proxy hacia la api original (para testear los privilegios de usuario), se puede reemplazar la primera linea de la función que conecta con la api en `src/server.ts`
+O bien si se quieren proteger todas las rutas del proxy hacia la api original (para testear los privilegios de usuario registrado), se puede importar la función Authorization y reemplazar la primera linea de la función que conecta con la api en `src/server.ts`
 ```
+import Authorization from './middleware/Auth';
+
 app.use('/api/rickandmorty', Authorization, async (req: Request, res: Response) => { 
   ///resto del código
 })
