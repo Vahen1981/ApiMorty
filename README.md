@@ -66,7 +66,7 @@ src/
   }
   ```
 
-  - **GET** `/api/users/verify`\
+- **GET** `/api/users/verify`\
   Verifica usuario con el token JWT.
 
   **Headers:**
