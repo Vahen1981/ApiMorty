@@ -3,6 +3,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import connectDB from './config/db';
 import userRouter from './routes/UserRoutes';
+import Authorization from './middleware/Auth'; //En caso de que solo usuarios registrados puedan acceder a las rutas de la api original
 
 dotenv.config();
 
@@ -21,7 +22,10 @@ app.use('/api/users', userRouter);
 //Función para conectar directamente con la base url de la api.
 //Todas las solicitudes que se hagan serán las mismas que aparecen en la documentación de la api,
 //pero la url base ya no será "https://rickandmortyapi.com/api", sino que será "http://localhost:8000/api/rickandmorty/",
-//o bien cambiando el localhost:8000 por el sitio donde se despliegue
+//o bien cambiando el localhost:8000 por el sitio donde se despliegue.
+//Si se quiere proteger todas las rutas que conectan a la api original (para testear los privilegio de usuario)
+//se puede reemplazar la primera línea por:
+//app.use('/api/rickandmorty', Authorization, async (req: Request, res: Response) => {
 app.use('/api/rickandmorty', async (req: Request, res: Response) => {
   const apiPath = req.originalUrl.replace('/api/rickandmorty', '');
   const url = `https://rickandmortyapi.com/api${apiPath}`;
