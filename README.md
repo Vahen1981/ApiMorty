@@ -83,7 +83,7 @@ src/
 
 ### Rick and Morty
 
-La api sirve de proxy a la api publica de Rick And Morty, los parámetros son los mismos que allí se documentan, pero reemplazando la url base "https://rickandmortyapi.com/api" por "https://apimorty.onrender.com/api/rickandmorty/".
+La api sirve de proxy a la api publica de Rick And Morty, los endpoints son los mismos que allí se documentan, pero reemplazando la url base "https://rickandmortyapi.com/api" por "https://apimorty.onrender.com/api/rickandmorty/".
 Documentación oficial de la api en: https://rickandmortyapi.com/documentation/#rest
 
 
