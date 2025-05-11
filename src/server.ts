@@ -3,6 +3,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import connectDB from './config/db';
 import userRouter from './routes/UserRoutes';
+import cors from 'cors';
 //En caso de que solo usuarios registrados puedan acceder a las rutas de la api original se puede importar el
 //middleware aquí, y reemplazar la primera línea de la función que conecta a la api de Rick and Morty (señalada abajo)
 //import Authorization from './middleware/Auth'; 
@@ -12,6 +13,7 @@ dotenv.config();
 const app: Application = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
